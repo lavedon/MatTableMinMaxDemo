@@ -30,7 +30,7 @@ export class DialogComponent implements OnInit {
       this.dialogRef.updateSize('100vw', '100vh');
       this.dialogRef.updatePosition({ top: '0'});
       this.state = 'maximized';
-      } else if (this.state === 'minimized') {
+      } else if (this.state === 'minimized' || this.state === 'maximized') {
         this.dialogRef.updateSize('80vw', '80vh');
         this.dialogRef.updatePosition({ top: '10%', left: '10%' });
         this.state = 'normal';

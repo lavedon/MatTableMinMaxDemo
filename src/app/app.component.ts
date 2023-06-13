@@ -14,6 +14,7 @@ export class AppComponent {
 
   openDialog() {
     this.dialog.open(DialogComponent, {
+      maxWidth: '100vw',
       width: '80vh',
       height: '80vh',
       panelClass: 'custom-dialog',
