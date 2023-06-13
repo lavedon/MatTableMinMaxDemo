@@ -42,4 +42,8 @@ export class DialogComponent implements OnInit {
       this.dialogRef.updatePosition({ bottom: '0px' });
       this.state = 'minimized';
     }
+
+    close() {
+      this.dialogRef.close();
+    }
 }
