@@ -2,6 +2,9 @@ import { OnInit, Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IDialogData } from '../interfaces/i-dialog-data';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatButton } from '@angular/material/button';
+
+
 
 @Component({
   selector: 'app-dialog',
