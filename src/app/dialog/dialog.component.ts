@@ -2,7 +2,6 @@ import { OnInit, Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IDialogData } from '../interfaces/i-dialog-data';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatButton } from '@angular/material/button';
 
 
 
@@ -17,19 +16,30 @@ export class DialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: IDialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: IDialogData) {
+      dialogRef.disableClose = true;
+    }
+    state: string = 'normal';
 
     ngOnInit(): void {
       this.dataSource = new MatTableDataSource(this.data.data);
     }
 
     maximize() {
+      if (this.state === 'normal') {
       this.dialogRef.updateSize('100vw', '100vh');
+      this.dialogRef.updatePosition({ top: '0'});
+      this.state = 'maximized';
+      } else if (this.state === 'minimized') {
+        this.dialogRef.updateSize('80vw', '80vh');
+        this.dialogRef.updatePosition({ top: '10%', left: '10%' });
+        this.state = 'normal';
+      }
     }
 
     minimize() {
-      this.dialogRef.updateSize('50px', '50px');
+      this.dialogRef.updateSize('50vw', '50px');
+      this.dialogRef.updatePosition({ bottom: '0px' });
+      this.state = 'minimized';
     }
-  
-
 }

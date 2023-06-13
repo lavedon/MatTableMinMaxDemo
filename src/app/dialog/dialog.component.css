@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+#window-bar {
+    display: flex;
+    background-color: turquoise;
+    height: 1em;
+    width: 100%;
+    justify-content: flex-end;
+}

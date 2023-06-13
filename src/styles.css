@@ -2,3 +2,18 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+.custom-dialog .mat-dialog-container {
+    overflow: hidden !important;
+    padding: 0;
+}
+
+.bottom-dialog .mat-dialog-container {
+  position: absolute !important;
+  bottom: 0px !important;
+  border-radius: 0 !important;
+}

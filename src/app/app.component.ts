@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
-import { MatButton } from '@angular/material/button'
 
 @Component({
   selector: 'app-root',
@@ -15,8 +14,10 @@ export class AppComponent {
 
   openDialog() {
     this.dialog.open(DialogComponent, {
-      width: '250px',
-      height: '250px',
+      width: '80vh',
+      height: '80vh',
+      panelClass: 'custom-dialog',
+      data: {
       data: [
         {
           position: 1,
@@ -48,7 +49,7 @@ export class AppComponent {
           name: 'Jill',
           occupation: 'Manager'
         }
-      ]
+      ]}
     });
   }
 }
